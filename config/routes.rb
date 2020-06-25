@@ -4,6 +4,6 @@ Rails.application.routes.draw do
   resources :books
   root 'home#top'
   get 'home/about'
-
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resources :chats,only: [:show]
+  post 'chats/:room_id', to: 'chats#create'
 end
