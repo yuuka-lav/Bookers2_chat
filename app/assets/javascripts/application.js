@@ -12,6 +12,16 @@
 //
 //= require jquery
 //= require rails-ujs
-//= require turbolinks
 //= require_tree .
 //= require bootstrap-sprockets
+
+$(function() {
+  $('.a').slick({
+      dots: true,
+      // autoplay: true,
+      // autoplaySpeed: 1000,
+  });
+  $('.slick-dots li').on('mouseover', function() {
+    $('.a').slick('goTo', $(this).index());
+  });
+});

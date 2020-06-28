@@ -17,3 +17,8 @@
     <% end %>
   </tbody>
 </table>
+<div class="a">
+  <% users.each do |user| %>
+    <div class="b"><%= attachment_image_tag(user, :profile_image, size: "250x250", fallback: "no-image-icon.jpg") %></div>
+  <% end %>
+</div>
