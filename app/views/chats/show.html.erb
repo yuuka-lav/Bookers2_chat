@@ -1,10 +1,9 @@
 <h1><%= @user.name %> さんとのチャット</h1>
 
-<%= form_for(@chat, remote: true, url: chat_path(@room), method: :post) do |f|%>
-  <%= f.text_area :message, id: "message__textarea" %>
-  <%= f.submit "送信", class: "btn btn-primary" %>
-<% end %>
-
 <div class="chat__table">
   <%= render 'table', chats: @chats %>
 </div>
+<%= form_with model: @chat, data: {remote: true}, url: chat_path(@room), method: :post do |f| %>
+  <%= f.text_field :message, id: "message__textarea" %>
+  <%= f.hidden_field :room_id %>
+<% end %>
