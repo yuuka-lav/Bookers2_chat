@@ -67,3 +67,4 @@ gem "refile-mini_magick"
 gem 'devise-i18n'
 gem 'rails-i18n'
 gem 'jquery-rails'
+gem 'acts-as-taggable-on', '~> 6.0'
